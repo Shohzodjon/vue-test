@@ -15,7 +15,7 @@
   --grey600: #4b5563;
   --grey700: #374151;
   --grey800: #1f2937;
-  --nter-font: "Inter";
+  --inter-font: "Inter";
 }
 .container {
   width: 100%;
@@ -28,4 +28,18 @@ ul {
 }
 a {
   text-decoration: none;
+}
+
+.header__title{
+font-size: 40px;
+font-weight: 600;
+line-height: 48px;
+color: var(--grey800);
+}
+.section__title{
+  text-align: center;
+font-size: 36px;
+font-weight: 600;
+line-height: 40px;
+color:var(--grey800);
 }
