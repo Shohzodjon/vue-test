@@ -6,6 +6,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
 }
 
 :root {
@@ -16,6 +17,9 @@
   --grey700: #374151;
   --grey800: #1f2937;
   --inter-font: "Inter";
+}
+body {
+  overflow-x: hidden;
 }
 .container {
   width: 100%;
@@ -30,16 +34,74 @@ a {
   text-decoration: none;
 }
 
-.header__title{
-font-size: 40px;
-font-weight: 600;
-line-height: 48px;
-color: var(--grey800);
+.header__title {
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 48px;
+  color: var(--grey800);
 }
-.section__title{
+.section__title {
   text-align: center;
-font-size: 36px;
-font-weight: 600;
-line-height: 40px;
-color:var(--grey800);
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 40px;
+  color: var(--grey800);
+}
+/* 360 576 765 992 1200 1400 */
+@media screen and (min-width: 350px) and (max-width: 575px) {
+  .container {
+    padding: 0 16px;
+  }
+  .header__title {
+    font-size: 24px;
+    line-height: 32px;
+  }
+  .section__title {
+    font-size: 24px;
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 764px) {
+  .container {
+    padding: 0 16px;
+  }
+  .header__title {
+    font-size: 30px;
+    line-height: 34px;
+  }
+  .section__title {
+    font-size: 26px;
+  }
+}
+
+@media screen and (min-width: 765px) and (max-width: 991px) {
+  .container {
+    padding: 0 16px;
+  }
+  .header__title {
+    font-size: 34px;
+    line-height: 36px;
+  }
+  .section__title {
+    font-size: 28px;
+  }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  .container {
+    padding: 0 16px;
+  }
+  .header__title {
+    font-size: 36px;
+    line-height: 38px;
+  }
+  .section__title {
+    font-size: 32px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1279px) {
+  .container {
+    padding: 0 16px;
+  }
 }

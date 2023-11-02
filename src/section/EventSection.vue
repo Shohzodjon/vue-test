@@ -51,4 +51,28 @@ const testimonial = [
 section {
   padding: 50px 0;
 }
+
+@media screen and (min-width: 350px) and (max-width: 575px) {
+  section {
+    padding: 20px 0;
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 764px) {
+  section {
+    padding: 25px 0;
+  }
+}
+
+@media screen and (min-width: 765px) and (max-width: 991px) {
+  section {
+    padding: 30px 0;
+  }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  section {
+    padding: 35px 0;
+  }
+}
 </style>

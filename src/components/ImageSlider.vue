@@ -24,11 +24,11 @@ const props = defineProps({
 <template>
   <div>
     <div class="swiper__btns">
-      <button class="swiper-next" aria-label="button">
+      <button class="swiper-prev prev__shape" aria-label="button">
         <img :src="arrowLeft" alt="arrow img" />
       </button>
       <h2 class="section__title">Мероприятия</h2>
-      <button class="swiper-prev prev__shape" aria-label="button">
+      <button class="swiper-next" aria-label="button">
         <img :src="arrowRight" alt="arrow right" />
       </button>
     </div>
@@ -37,9 +37,28 @@ const props = defineProps({
         :modules="modules"
         :slides-per-view="3"
         :space-between="32"
+        effect="coverflow"
         :navigation="{
           nextEl: '.swiper-next',
           prevEl: '.swiper-prev',
+        }"
+        :breakpoints="{
+          350: {
+            slidesPerView: 1,
+            spaceBetween: 10,
+          },
+          576: {
+            slidesPerView: 2,
+            spaceBetween: 10,
+          },
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 25,
+          },
+          992: {
+            slidesPerView: 3,
+            spaceBetween: 25,
+          },
         }"
       >
         <SwiperSlide v-for="(img, index) in props.images" :key="index">
@@ -58,6 +77,24 @@ const props = defineProps({
       :navigation="{
         nextEl: '.swiper-next',
         prevEl: '.swiper-prev',
+      }"
+      :breakpoints="{
+        350: {
+          slidesPerView: 1,
+          spaceBetween: 10,
+        },
+        576: {
+          slidesPerView: 2,
+          spaceBetween: 15,
+        },
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 25,
+        },
+        992: {
+          slidesPerView: 3,
+          spaceBetween: 25,
+        },
       }"
     >
       <SwiperSlide v-for="(item, i) in props.testimonial" :key="i">
@@ -103,5 +140,31 @@ const props = defineProps({
 }
 .testimonial__title {
   margin: 34px 0 48px;
+}
+
+/*  response */
+@media screen and (min-width: 350px) and (max-width: 575px) {
+  .slider__wrapper {
+    padding-bottom: 28px;
+  }
+  .img__slider {
+    width: 100%;
+    max-width: 100%;
+  }
+  .testimonial__title {
+    margin: 24px 0 38px;
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 764px) {
+}
+
+@media screen and (min-width: 765px) and (max-width: 991px) {
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1279px) {
 }
 </style>

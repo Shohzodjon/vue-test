@@ -78,4 +78,54 @@ const items = [
   color: var(--grey600);
   text-align: center;
 }
+
+/*  responsive  */
+
+@media screen and (min-width: 350px) and (max-width: 575px) {
+  .about__card {
+    align-items: center;
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .about__card div {
+    flex: 1;
+  }
+  .card__item {
+    padding: 6px 22px 22px 22px;
+    background: #fff;
+  }
+  .card__img img {
+    max-height: 120px;
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 764px) {
+  .about__card {
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 25px;
+  }
+  .card__item {
+    padding: 6px 22px 22px 22px;
+    width: 45%;
+  }
+  .about__card div {
+    flex: 1;
+  }
+
+  .card__img img {
+    max-height: 120px;
+  }
+}
+
+@media screen and (min-width: 765px) and (max-width: 991px) {
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1279px) {
+}
 </style>

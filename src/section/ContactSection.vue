@@ -1,6 +1,7 @@
 <script setup>
 import BaseInput from "../components/BaseInput.vue";
 import BaseBtn from "../components/BaseBtn.vue";
+import SelectComp from "../components/SelectComp.vue";
 import { ref } from "vue";
 
 const email = ref("");
@@ -60,37 +61,17 @@ const data = [
                 />
               </div>
               <div class="grid__item">
-                <label>Направление</label>
-                <select-option
-                  :placeHolder="'Select item'"
-                  v-model="branch"
-                  :inputOutlineColor="'rgba(134, 239, 173, 0.5)'"
+                <SelectComp
                   :data="data"
-                  :displayName="'name'"
-                  :selected="data[0]"
+                  selectType="branch"
+                  label="Направление"
                 />
               </div>
               <div class="grid__item">
-                <label>Город</label>
-                <select-option
-                  :placeHolder="'Select item'"
-                  v-model="district"
-                  :inputOutlineColor="'rgba(134, 239, 173, 0.5)'"
-                  :data="data"
-                  :displayName="'name'"
-                  :selected="data[0]"
-                />
+                <SelectComp :data="data" selectType="city" label="Город" />
               </div>
               <div class="grid__item">
-                <label>Район</label>
-                <select-option
-                  :placeHolder="'Select item'"
-                  v-model="city"
-                  :inputOutlineColor="'rgba(134, 239, 173, 0.5)'"
-                  :data="data"
-                  :displayName="'name'"
-                  :selected="data[0]"
-                />
+                <SelectComp :data="data" selectType="district" label="Район" />
               </div>
             </div>
             <div class="contact__btn"><BaseBtn btnContent="Отправить" /></div>
@@ -149,7 +130,7 @@ const data = [
   width: 343px;
   padding: 13px;
 }
-.contact__flex__left .contact__flex__right {
+.contact__flex__right {
   max-width: 472px;
   width: 100%;
 }
@@ -157,36 +138,157 @@ const data = [
 .contact__flex__right img {
   width: 100%;
 }
-</style>
-<style>
-.input-container {
-  border: 1px solid #9ca3af !important;
-  border-radius: 8px !important;
+
+/*  responsive  */
+
+@media screen and (min-width: 350px) and (max-width: 575px) {
+  .contact__section {
+    padding: 32px 0 31px;
+  }
+  .contact__flex {
+    display: flex;
+    align-items: center;
+    gap: 41px;
+  }
+  .contact__flex__left {
+    flex: 1;
+  }
+  .contact__flex__left h2 {
+    margin-bottom: 6px;
+  }
+  .contact__flex__left p {
+    margin-bottom: 11px;
+  }
+
+  .contact__grid {
+    grid-template-columns: repeat(1, 1fr);
+    column-gap: 16px;
+    margin-bottom: 28px;
+  }
+  .grid__item label {
+    font-size: 16px;
+  }
+
+  .contact__btn button {
+    width: 100%;
+  }
+  .contact__flex__right {
+    display: none;
+  }
 }
-.input-container > input {
-  padding: 12px !important;
-  border-radius: 8px !important;
-  background: #fff !important;
-  color: #9ca3af !important;
-  font-size: 20px !important;
-  font-weight: 400 !important;
-  line-height: 24px !important;
+
+@media screen and (min-width: 576px) and (max-width: 764px) {
+  .contact__section {
+    padding: 32px 0 31px;
+  }
+  .contact__flex {
+    display: flex;
+    align-items: center;
+    gap: 41px;
+  }
+  .contact__flex__left {
+    flex: 1;
+  }
+  .contact__flex__left h2 {
+    margin-bottom: 6px;
+  }
+  .contact__flex__left p {
+    margin-bottom: 11px;
+  }
+
+  .contact__grid {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 16px;
+    margin-bottom: 28px;
+  }
+  .grid__item label {
+    font-size: 16px;
+  }
+
+  .contact__btn button {
+    width: 100%;
+  }
+  .contact__flex__right {
+    display: none;
+  }
 }
-.clear-icon {
-  display: none !important;
+
+@media screen and (min-width: 765px) and (max-width: 991px) {
+  .contact__section {
+    padding: 45px 0 31px;
+  }
+  .contact__flex {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+  .contact__flex__left {
+    /* flex: 1; */
+    width: 50%;
+  }
+  .contact__flex__left h2 {
+    margin-bottom: 32px;
+  }
+  .contact__flex__left p {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 32px;
+    color: var(--grey700);
+    margin-bottom: 24px;
+  }
+
+  .contact__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 10px;
+    row-gap: 16px;
+    margin-bottom: 28px;
+  }
+  .grid__item label {
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+  .contact__btn {
+    text-align: center;
+  }
+  .contact__btn button {
+    width: 343px;
+    padding: 13px;
+  }
+  .contact__flex__right {
+    max-width: 472px;
+    display: none;
+  }
+  .contact__flex__right img {
+    width: 100%;
+  }
 }
-.chevron-icon {
-  background: none !important;
-  transform: translateY(10%);
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  .contact__section {
+    padding: 20px 0 31px;
+  }
+  .contact__flex {
+    align-items: flex-start;
+    gap: 30px;
+  }
+  .contact__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 10px;
+    row-gap: 16px;
+    margin-bottom: 28px;
+  }
+  .contact__flex__right {
+    max-width: 472px;
+    max-height: 400px;
+  }
+  .contact__flex__right img {
+    width: 100%;
+    height: 550px;
+  }
 }
-.list-container {
-  width: 100% !important;
-  max-width: 300px;
-}
-.list-container li {
-  color: #9ca3af !important;
-  font-size: 20px !important;
-  font-weight: 400 !important;
-  line-height: 24px !important;
+
+@media screen and (min-width: 1200px) and (max-width: 1279px) {
 }
 </style>
