@@ -8,6 +8,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "swiper": "^11.0.3",
     "vue": "^3.3.4",
     "vue3-select-option-search": "^0.0.6"
   },
