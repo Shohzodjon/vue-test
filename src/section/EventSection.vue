@@ -41,7 +41,7 @@ const testimonial = [
 ];
 </script>
 <template>
-  <section>
+  <section id="event">
     <div class="container">
       <ImageSlider :images="sliderImages" :testimonial="testimonial" />
     </div>

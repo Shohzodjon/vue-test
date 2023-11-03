@@ -30,6 +30,14 @@ const props = defineProps({
     line-height: 14px;
   }
 }
+@media screen and (min-width: 350px) and (max-width: 576px) {
+  .base__btn {
+    border-radius: 12px;
+    padding: 10px;
+    font-size: 12px;
+    line-height: 12px;
+  }
+}
 
 @media screen and (min-width: 765px) and (max-width: 991px) {
   .base__btn {

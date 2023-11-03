@@ -1,12 +1,36 @@
 <script setup>
 import AboutCard from "../components/AboutCard.vue";
+
+import rocet from "@/assets/images/rocet.png";
+import chart from "@/assets/images/chart.png";
+import treasure from "@/assets/images/treasure.png";
+const items = [
+  {
+    img: rocet,
+    title: "Универсальная платформа",
+    desc: "Предназначенная для самозанятых женщин превратить свое хобби в прибыльный бизнес",
+    id: 1,
+  },
+  {
+    img: chart,
+    title: "Универсальная платформа",
+    desc: "Предназначенная для самозанятых женщин превратить свое хобби в прибыльный бизнес",
+    id: 1,
+  },
+  {
+    img: treasure,
+    title: "Универсальная платформа",
+    desc: "Предназначенная для самозанятых женщин превратить свое хобби в прибыльный бизнес",
+    id: 1,
+  },
+];
 </script>
 <template>
-  <section class="about__section">
+  <section class="about__section" id="about">
     <div class="container">
       <h2 class="section__title">Почему Coozin?</h2>
       <div class="about__card__flex">
-        <AboutCard />
+        <AboutCard :items="items" />
       </div>
     </div>
   </section>

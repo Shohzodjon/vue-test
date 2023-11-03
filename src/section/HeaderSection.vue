@@ -2,10 +2,16 @@
 import BaseBtn from "../components/BaseBtn.vue";
 import NumberAnime from "../components/NumberAnime.vue";
 import GridComp from "../components/GridComp.vue";
-import { gsap } from "gsap";
+
+import img1 from "@/assets/images/img1.png";
+import img2 from "@/assets/images/img6.png";
+import img3 from "@/assets/images/img3.png";
+import img4 from "@/assets/images/img5.png";
+
+const images = [img1, img2, img3, img4];
 </script>
 <template>
-  <section>
+  <section id="home">
     <div class="container">
       <div class="header__flex">
         <div class="header__flex__left">
@@ -28,7 +34,7 @@ import { gsap } from "gsap";
         </div>
 
         <div class="header__flex__right">
-          <GridComp />
+          <GridComp :images="images" />
         </div>
       </div>
     </div>

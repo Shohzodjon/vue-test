@@ -10,12 +10,6 @@ const branch = ref({});
 const city = ref({});
 const district = ref({});
 
-const names = [
-  { id: 1, text: "SSSSSS" },
-  { id: 2, text: "AAAAAA" },
-  { id: 3, text: "BBBBBB" },
-  { id: 4, text: "MMMMMMM" },
-];
 const data = [
   { id: 1, name: "Ram" },
   { id: 2, name: "Shyam" },
@@ -26,7 +20,7 @@ const data = [
 ];
 </script>
 <template>
-  <section class="contact__section">
+  <section class="contact__section" id="contact">
     <div class="container">
       <div class="contact__flex">
         <div class="contact__flex__left">

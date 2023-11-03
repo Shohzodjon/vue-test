@@ -1,19 +1,21 @@
 <template>
   <div class="grid__box">
-    <div v-for="(img, index) in images" :key="index" class="grid__item">
+    <div v-for="(img, index) in props.images" :key="index" class="grid__item">
       <img :src="img" alt="img" />
     </div>
   </div>
 </template>
 
 <script setup>
-// import img from '../assets/images/'
-import img1 from "@/assets/images/img1.png";
-import img2 from "@/assets/images/img6.png";
-import img3 from "@/assets/images/img3.png";
-import img4 from "@/assets/images/img5.png";
+import { defineProps } from "vue";
 
-const images = [img1, img2, img3, img4];
+const props = defineProps({
+  images: {
+    type: Array,
+    required: true,
+  },
+});
+// import img from '../assets/images/'
 </script>
 
 <style scoped>

@@ -8,6 +8,7 @@ import ContactSection from "./section/ContactSection.vue";
 import EventSection from "./section/EventSection.vue";
 import Footer from "./section/Footer.vue";
 import { gsap } from "gsap";
+import shape from "@/assets/images/shape.png";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
@@ -62,6 +63,8 @@ onMounted(() => {
 
 <template>
   <section>
+    <img :src="shape" alt="shape" class="home__shape__left" />
+    <img :src="shape" alt="shape" class="home__shape__right" />
     <Navbar />
     <HeaderSection />
     <EduSection />
@@ -72,4 +75,33 @@ onMounted(() => {
   </section>
 </template>
 
-<style scoped></style>
+<style scoped>
+section {
+  position: relative;
+  max-width: 1440px;
+}
+
+@media screen and (min-width: 350px) and (max-width: 1279px) {
+  .home__shape__left,
+  .home__shape__right {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .home__shape__left {
+    position: absolute;
+    top: 19%;
+    left: 0;
+    width: 50px;
+    z-index: 9999 !important;
+    transform: translateX(90deg);
+  }
+  .home__shape__right {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50px;
+  }
+}
+</style>

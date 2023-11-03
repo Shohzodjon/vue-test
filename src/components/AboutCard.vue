@@ -1,32 +1,14 @@
 <script setup>
-import rocet from "../assets/images/rocet.png";
-import chart from "../assets/images/chart.png";
-import treasure from "../assets/images/treasure.png";
-const items = [
-  {
-    img: rocet,
-    title: "Универсальная платформа",
-    desc: "Предназначенная для самозанятых женщин превратить свое хобби в прибыльный бизнес",
-    id: 1,
-  },
-  {
-    img: chart,
-    title: "Универсальная платформа",
-    desc: "Предназначенная для самозанятых женщин превратить свое хобби в прибыльный бизнес",
-    id: 1,
-  },
-  {
-    img: treasure,
-    title: "Универсальная платформа",
-    desc: "Предназначенная для самозанятых женщин превратить свое хобби в прибыльный бизнес",
-    id: 1,
-  },
-];
+import { defineProps } from "vue";
+
+const props = defineProps({
+  items: Array,
+});
 </script>
 
 <template>
   <div class="about__card">
-    <div v-for="item in items" :key="item.id" class="card__item">
+    <div v-for="item in props.items" :key="item.id" class="card__item">
       <div class="card__img">
         <img :src="item.img" alt="img" />
       </div>

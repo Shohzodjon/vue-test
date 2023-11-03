@@ -1,8 +1,23 @@
 <script setup>
 import CheckCourse from "../components/CheckCourse.vue";
+
+const contents = [
+  {
+    title: "Курсы и мастер-классы",
+    desc: "На платформе доступны онлайн-курсы и мастер-классы по различным темам, связанным с бизнесом, такими как управление продажами, маркетинг, финансы и другие.",
+  },
+  {
+    title: "Опытные специалисты",
+    desc: "Курсы ведут опытные специалисты, которые делятся своими знаниями и опытом.",
+  },
+  {
+    title: "Обучись и начни свое дело",
+    desc: "Пользователи которые успешно прошли курсы имеют возможность присоединиться к торговой площадке Coozin.",
+  },
+];
 </script>
 <template>
-  <section class="edu__section">
+  <section class="edu__section" id="education">
     <div class="container">
       <div class="edu__flex">
         <div class="edu__flex__left">
@@ -14,7 +29,7 @@ import CheckCourse from "../components/CheckCourse.vue";
             Онлайн-академия Coozin предоставляет обучение и помощь в развитии
             бизнеса.
           </p>
-          <CheckCourse />
+          <CheckCourse :contents="contents" />
         </div>
       </div>
     </div>

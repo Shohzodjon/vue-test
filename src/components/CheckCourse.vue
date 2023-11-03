@@ -1,24 +1,14 @@
 <script setup>
 import CheckIcon from "../assets/icons/CheckIcon.vue";
+import { defineProps } from "vue";
 
-const contents = [
-  {
-    title: "Курсы и мастер-классы",
-    desc: "На платформе доступны онлайн-курсы и мастер-классы по различным темам, связанным с бизнесом, такими как управление продажами, маркетинг, финансы и другие.",
-  },
-  {
-    title: "Опытные специалисты",
-    desc: "Курсы ведут опытные специалисты, которые делятся своими знаниями и опытом.",
-  },
-  {
-    title: "Обучись и начни свое дело",
-    desc: "Пользователи которые успешно прошли курсы имеют возможность присоединиться к торговой площадке Coozin.",
-  },
-];
+const props = defineProps({
+  contents: Array,
+});
 </script>
 <template>
   <ul class="check__course">
-    <li v-for="(content, index) in contents" :key="index">
+    <li v-for="(content, index) in props.contents" :key="index">
       <div>
         <span><CheckIcon /></span>
         <h6>{{ content.title }}</h6>
